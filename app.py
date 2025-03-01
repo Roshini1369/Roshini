@@ -1,6 +1,7 @@
+83% of storage used … If you run out, you can't create, edit and upload files. Get 30 GB of storage for ₹59.00 ₹15.00 for 1 month.
 import requests
 
-url = "https://disease.sh/v3/covid-19/countries/uk"
+url = "https://disease.sh/v3/covid-19/countries/usa"
 r = requests.get(url)
 data = r.json()
 
@@ -57,7 +58,7 @@ y = df_historical["cases"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-model =LinearRegression()
+model = LinearRegression()
 model.fit(X_train, y_train)
 
 # Predict next day's cases
@@ -76,4 +77,4 @@ day_input = st.number_input("Enter day number (e.g., 31 for prediction)", min_va
 if st.button("Predict"):
     prediction = model.predict([[day_input]])
     st.write(f"Predicted cases for day {day_input}: {int(prediction[0])}")
-convert this code into svm
+
