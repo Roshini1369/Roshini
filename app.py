@@ -1,4 +1,3 @@
-83% of storage used … If you run out, you can't create, edit and upload files. Get 30 GB of storage for ₹59.00 ₹15.00 for 1 month.
 import requests
 
 url = "https://disease.sh/v3/covid-19/countries/usa"
@@ -77,4 +76,5 @@ day_input = st.number_input("Enter day number (e.g., 31 for prediction)", min_va
 if st.button("Predict"):
     prediction = model.predict([[day_input]])
     st.write(f"Predicted cases for day {day_input}: {int(prediction[0])}")
+
 
